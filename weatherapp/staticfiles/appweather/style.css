@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    margin-bottom: 7px;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 .card {
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(135deg, #000000, #c0c0c0); 
+    background: linear-gradient(135deg,#00feba,#5b548a); 
     /* linear-gradient(135deg, #00feba, #5b548a) */
     color: #fff;
     margin: 100px auto 0;
@@ -66,7 +67,7 @@ body {
 }
 
 .weather h1 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 500;
 }
 
