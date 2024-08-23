@@ -19,16 +19,23 @@ forecast = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat={}&lon={}
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from django.shortcuts import render
+from django.http import HttpResponseBadRequest
+
 def index(request):
     weather_data = None
     avg_temp = None
-    error_message = "please any place.."
+    error_message = "Please enter any place.."
 
     if request.method == "POST":
         city = request.POST.get('city', '').strip()
 
+        print(city,"******************************POST REQ*********************************")
+
         if not city:
             error_message = "Please enter a city name."
+        elif not city.isalpha():
+            error_message = "City name must contain only alphabetic characters."
         else:
             try:
                 weather_data = fetch_weather_and_forecast(city)
@@ -49,6 +56,7 @@ def index(request):
         "error_message": error_message
     }
     return render(request, 'appweather/index.html', context)
+
 
 
     
