@@ -22,7 +22,7 @@ from django.http import HttpResponse
 def index(request):
     weather_data = None
     avg_temp = None
-    error_message = None
+    error_message = "please any place.."
 
     if request.method == "POST":
         city = request.POST.get('city', '').strip()
